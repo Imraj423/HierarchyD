@@ -1,0 +1,13 @@
+{% load mptt_tags %}
+<ul class="root">
+  {% drilldown_tree_for_node genre as drilldown %}
+  <li>
+    {{node.name}} 
+    {% if not node.is_leaf_node %}
+    <ul class="children">
+      {{children}}
+    </ul>
+    {% endif %}
+  </li>
+  
+</ul>
